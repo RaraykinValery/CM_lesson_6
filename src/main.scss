@@ -229,68 +229,73 @@ body {
 .exclamation-section {
   padding-block: 74px;
 
+  &-content {
+    &--middle {
+      grid-column: 1/-1;
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &--right {
+      grid-column: span 8/-1;
+    }
+
+    &--middle-on-grid {
+      grid-column: 4/span 6;
+      display: flex;
+      justify-content: center;
+
+      @media (max-width: #{$breakpoint-tablet}) {
+        grid-column: 2/span 6;
+      }
+
+      @media (max-width: #{$breakpoint-phone}) {
+        grid-column: 1/-1;
+      }
+    }
+
+  }
+
+
   h3 {
     @include typography.typography-exclamation-title-medium();
     color: var(--md-sys-color-inverse-on-surface);
-    text-align: center;
-    grid-column: 1/-1;
   }
 
   &__text {
     @include typography.typography-descr-text();
     color: var(--md-sys-color-on-surface-variant);
-    grid-column: span 8/-1;
   }
 }
 
-.big-exclamation-section {
+.multiple-headlines-exclamation {
   padding-block: 100px;
-
-  &-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    text-align: center;
-    grid-column: 1/-1;
-    color: var(--md-sys-color-on-primary-container);
-  }
 
   h2 {
     @include typography.typography-exclamation-title-large();
+    color: var(--md-sys-color-on-primary-container);
   }
 
   h3 {
     @include typography.typography-exclamation-title-medium();
+    color: var(--md-sys-color-on-primary-container);
   }
 
   h4 {
     @include typography.typography-exclamation-title-small();
+    color: var(--md-sys-color-on-primary-container);
   }
 }
 
 .cta-section {
   padding-block: 50px;
-
-  &-content {
-    grid-column: 1/-1;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__button {
-    max-width: 552px;
-  }
 }
 
 .logo-section {
   padding-block: 93px;
-
-  &-content {
-    grid-column: 1/-1;
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .footer {
