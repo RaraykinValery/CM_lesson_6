@@ -96,8 +96,6 @@ body {
   position: absolute;
   right: 0;
   left: 0;
-  display: grid;
-  align-items: center;
   padding-block: 26px;
 
   &-content {
@@ -200,7 +198,7 @@ body {
     }
 
     @media (max-width: #{$breakpoint-tablet}) {
-      grid-column: 1/-1
+      --_grid-column: 1/-1;
     }
   }
 
@@ -210,10 +208,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    @media (max-width: #{$breakpoint-tablet}) {
-      grid-column: 1/-1
-    }
   }
 
   &__title {
