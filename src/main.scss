@@ -229,6 +229,30 @@ body {
 .exclamation-section {
   padding-block: 74px;
 
+  &--single-headline {
+    h3 {
+      @include typography.typography-exclamation-title-medium();
+      color: var(--md-sys-color-inverse-on-surface);
+    }
+  }
+
+  &--multiple-headlines {
+    color: var(--md-sys-color-on-primary-container);
+
+    h2 {
+      @include typography.typography-exclamation-title-large();
+    }
+
+    h3 {
+      @include typography.typography-exclamation-title-medium();
+    }
+
+    h4 {
+      @include typography.typography-exclamation-title-small();
+    }
+
+  }
+
   &-content {
     &--middle {
       grid-column: 1/-1;
@@ -256,13 +280,6 @@ body {
         grid-column: 1/-1;
       }
     }
-
-  }
-
-
-  h3 {
-    @include typography.typography-exclamation-title-medium();
-    color: var(--md-sys-color-inverse-on-surface);
   }
 
   &__text {
@@ -273,21 +290,6 @@ body {
 
 .multiple-headlines-exclamation {
   padding-block: 100px;
-
-  h2 {
-    @include typography.typography-exclamation-title-large();
-    color: var(--md-sys-color-on-primary-container);
-  }
-
-  h3 {
-    @include typography.typography-exclamation-title-medium();
-    color: var(--md-sys-color-on-primary-container);
-  }
-
-  h4 {
-    @include typography.typography-exclamation-title-small();
-    color: var(--md-sys-color-on-primary-container);
-  }
 }
 
 .cta-section {
