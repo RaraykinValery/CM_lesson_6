@@ -1,0 +1,113 @@
+@use "sass:map";
+
+$typography-map: (
+  "navigation-items": (
+    "line-height": 28px,
+    "size": 22px,
+    "tracking": normal,
+    "weight": 400
+    ),
+  "headline-large": (
+    "line-height": 64px,
+    "size": 57px,
+    "tracking": 0.25px,
+    "weight": 400
+    ),
+  "headline-medium": (
+    "line-height": 40px,
+    "size": 32px,
+    "tracking": normal,
+    "weight": 400
+    ),
+  "button-text": (
+    "line-height": 52px,
+    "size": 45px,
+    "tracking": normal,
+    "weight": 400
+    ),
+  "descr-title": (
+    "line-height": 36px,
+    "size": 28px,
+    "tracking": normal,
+    "weight": 400
+    ),
+  "descr-text": (
+    "line-height": 24px,
+    "size": 16px,
+    "tracking": 0.5px,
+    "weight": 400
+    ),
+  "exclamation-title-small": (
+    "line-height": 44px,
+    "size": 36px,
+    "tracking": normal,
+    "weight": 400
+    ),
+  "exclamation-title-medium": (
+    "line-height": 52px,
+    "size": 45px,
+    "tracking": normal,
+    "weight": 400
+    ),
+  "exclamation-title-large": (
+    "line-height": 64px,
+    "size": 57px,
+    "tracking": 0.25px,
+    "weight": 400
+    ),
+  "footer-text": (
+    "line-height": 20px,
+    "size": 14px,
+    "tracking": 0.25px,
+    "weight": 400
+    ),
+);
+
+@mixin _private-apply-font($font-style) {
+  $font-map: map.get($typography-map, $font-style);
+
+  font-size: map.get($font-map, "size");
+  font-weight: map.get($font-map, "weight");
+  letter-spacing: map.get($font-map, "tracking");
+  line-height: map.get($font-map, "line-height");
+}
+
+@mixin typography-footer-text {
+  @include _private-apply-font("footer-text");
+}
+
+@mixin typography-exclamation-title-small {
+  @include _private-apply-font("exclamation-title-small");
+}
+
+@mixin typography-exclamation-title-medium {
+  @include _private-apply-font("exclamation-title-medium");
+}
+
+@mixin typography-exclamation-title-large {
+  @include _private-apply-font("exclamation-title-large");
+}
+
+@mixin typography-descr-text {
+  @include _private-apply-font("descr-text");
+}
+
+@mixin typography-descr-title {
+  @include _private-apply-font("descr-title");
+}
+
+@mixin typography-navigation-items {
+  @include _private-apply-font("navigation-items");
+}
+
+@mixin typography-headline-large {
+  @include _private-apply-font("headline-large");
+}
+
+@mixin typography-headline-medium {
+  @include _private-apply-font("headline-medium");
+}
+
+@mixin typography-button-text {
+  @include _private-apply-font("button-text");
+}
