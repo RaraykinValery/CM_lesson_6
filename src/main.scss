@@ -125,6 +125,8 @@ body {
 
     @media (max-width: #{$breakpoint-phone}) {
       grid-column: 1/-1;
+      flex-direction: column;
+      gap: 10px;
     }
   }
 }
@@ -137,6 +139,10 @@ body {
   background-position: right;
   align-items: center;
   padding-block: 140px;
+
+  @media (max-width: #{$breakpoint-phone}) {
+    padding-top: 210px;
+  }
 
   &-content {
     display: flex;
